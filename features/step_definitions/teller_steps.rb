@@ -6,12 +6,6 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/hwcuc for more book information.
 #---
-require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'nice_bank')
-
-CAPTURE_CASH_AMOUNT = Transform /^\$(\d+)$/ do |digits|
-  digits.to_i
+When /^I withdraw (#{CAPTURE_CASH_AMOUNT})$/ do |amount|
+  teller.withdraw_from(my_account, amount)
 end
-
-
-
-

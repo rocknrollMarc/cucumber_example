@@ -6,12 +6,18 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/hwcuc for more book information.
 #---
-require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'nice_bank')
-
-CAPTURE_CASH_AMOUNT = Transform /^\$(\d+)$/ do |digits|
-  digits.to_i
+module KnowsTheDomain
+  def my_account
+    @my_account ||= Account.new
+  end
+  
+  def cash_slot
+    @cash_slot ||= CashSlot.new
+  end
+  
+  def teller
+    @teller ||= Teller.new(cash_slot)
+  end
 end
 
-
-
-
+World(KnowsTheDomain)

@@ -7,11 +7,3 @@
 # Visit http://www.pragmaticprogrammer.com/titles/hwcuc for more book information.
 #---
 require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'nice_bank')
-
-CAPTURE_CASH_AMOUNT = Transform /^\$(\d+)$/ do |digits|
-  digits.to_i
-end
-
-
-
-
