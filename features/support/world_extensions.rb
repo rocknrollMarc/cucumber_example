@@ -25,4 +25,3 @@ module KnowsTheUserInterface
 end
 
 World(KnowsTheUserInterface)
-
