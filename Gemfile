@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'sinatra', '1.3.2'
+gem 'sinatra', '2.2.3'
 gem 'service_manager', '0.6.4'
 
 group :development do
